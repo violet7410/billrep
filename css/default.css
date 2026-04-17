@@ -1,0 +1,321 @@
+body { 
+    font-family: 'Segoe UI', Sans-serif;
+    font-size: smaller;
+    margin: 0;
+}
+
+table.form { 
+    border: 0px solid gray; 
+    border-collapse:collapse; 
+    font-family: inherit;
+}
+table.form td {
+    padding: 2px 4px;
+}
+
+h1 {
+    font-weight: normal;
+    text-shadow: 2px 2px 2px rgb(173, 173, 172);
+}
+
+h2 {
+    font-weight: normal;
+    text-shadow: 2px 2px 2px rgb(173, 173, 172);
+}
+
+
+div.pageHeader {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    width: 100%;
+    /* visibility: hidden; */
+    background-color: rgb(67, 67, 165);
+    /* border: 1px solid red; */
+    height: 50px;
+    padding: 5px 15px;
+    box-shadow: 5px 5px 5px rgb(112, 112, 112);
+    color: #fff;
+}
+div.pageHeader div.reportName {
+    font-size: x-large;
+    /* font-weight: bold; */
+    text-shadow: 2px 2px 2px black;
+}
+
+div.pageHeader div.reportDescription {
+    text-shadow: 2px 2px 2px black;
+}
+
+div.pageBody {
+    /* border: 1px solid red; */
+    padding-top: 70px;  /* This must be align with .pageHeader height */
+    margin: 10px;
+}
+
+
+div.pageFooter {
+    /* border: 1px solid red; */
+    padding: 5px 0px;
+    color: rgb(165, 165, 165);
+    font-style: italic;
+}
+
+.expandText { 
+    height:auto; 
+}
+
+
+
+.collapseText { 
+    height:0px; 
+    width: 0px;
+    overflow: hidden; 
+}
+
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    /* border-bottom: 1px dotted black; If you want dots under the hoverable text */
+}
+  
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 180px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    right : -190px;
+    top : 10px; 
+    z-index: 1;
+}
+
+.popup {
+    background-color: black;
+    color: white;
+    position: absolute;
+    padding: 5px 5px;
+    border-radius: 6px;
+    z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    text-align: left;
+    padding-left: 5px;
+    visibility: visible;
+}
+
+
+/*----------------------------------------------------------------------------------
+CSS for all inputs
+----------------------------------------------------------------------------------*/
+input.mandatoryField {
+    border-color: rgb(255, 2, 2);
+    border: 1px solic red;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 4px 4px;
+    font-family: inherit;
+    box-sizing: content-box;
+    border-radius: 2px;
+    border: 1px solid gray; /* #73AD21; */
+} 
+
+input[type=number] {
+    padding: 4px 4px;
+    font-family: inherit;
+    height: 20px;
+    border-radius: 2px;
+    width: calc(100%);
+    border: 1px solid gray;
+} 
+
+input[type=date] {
+    padding: 4px 4px;
+    font-family: inherit;
+    width: calc(100% - 2px);
+} 
+
+select {
+    padding: 4px 4px;
+    font-family: inherit;
+    border: 1px solid gray;
+    border-radius: 2px;
+    width: calc(100% + 10px);
+} 
+
+button:hover, input[type=submit]:hover {
+    cursor: pointer;
+    text-shadow: 2px 2px 2px black;
+    box-shadow: 2px 2px 2px gray;
+}
+
+input[type=submit] {
+    padding: 4px 4px;
+    font-family: inherit;
+    border-radius: 2px;
+    border: 1px solid gray;
+    background-color: rgb(67, 67, 165);
+    color: white;
+} 
+
+button {
+    padding: 1px 4px;
+    font-family: inherit;
+    border-radius: 2px;
+    border: 1px solid gray;
+    background-color: rgb(39, 104, 61);
+    color: white;
+} 
+/*----------------------------------------------------------------------------------
+Generic Report using <table>
+----------------------------------------------------------------------------------*/
+table.reportAlt    { 
+    border: 1px solid rgb(224, 224, 224);
+    border-collapse:collapse; 
+}
+
+table.reportAlt th   { 
+    background-color: rgb(172, 172, 172);
+    height: 25px;
+    padding: 2px 10px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #d6d4d4;
+    vertical-align: middle;
+}
+
+table.reportAlt tr:nth-child(odd) {
+    background-color: rgb(230, 230, 230);
+    vertical-align: top;
+    /* padding: 4px 4px; */
+}
+
+table.reportAlt tr:nth-child(even) {
+    vertical-align: top;
+    /* padding: 4px 4px; */
+}
+
+table.reportAlt tr:hover {
+    background-color: rgb(255, 255, 158);
+}
+
+table.reportAlt td {
+    padding: 4px 4px;
+}    
+
+/*----------------------------------------------------------------------------------
+Regression result report
+----------------------------------------------------------------------------------*/
+table.regressResult    { 
+    border: 1px rgb(224, 224, 224);
+    border-collapse:collapse; 
+}
+
+table.regressResult tr.tableHeader1 th {
+    background-color: rgb(172, 172, 172);
+    height: 25px;
+    padding: 2px 10px;
+    text-shadow: 1px 1px 1px #d6d4d4;
+}
+
+table.regressResult tr.tableHeader2 th { 
+    background-color: rgb(173, 127, 127);
+    padding: 2px;
+    text-align: left;
+    font-weight: normal;
+}
+
+table.regressResult tr:nth-child(odd) {
+    background-color: rgb(230, 230, 230);
+}
+
+table.regressResult tr:hover {
+    background-color: rgb(255, 255, 158);
+    /* font-weight: bolder; */
+}
+
+table.regressResult td {
+    padding: 4px 4px;  
+}
+
+/*----------------------------------------------------------------------------------
+<TD> color for test result
+----------------------------------------------------------------------------------*/
+td.red { 
+    background-color: rgba(255, 0, 0, 0.6); 
+    color: yellow;
+}
+
+td.red a {
+    color: yellow;
+}
+
+td.red a:hover {
+    color : blue;
+}
+
+td.green { 
+    background-color:rgba(34, 139, 34, 0.6);
+    color:white;
+}
+
+td.green a { 
+    color: white;
+}
+
+
+td.green a:hover { 
+    color : blue;
+}
+
+td.orange { 
+    /* background-color: rgba(255, 153, 0);  */
+    background-color: rgba(255, 165, 0, 0.6);
+}
+
+td.orange a { 
+    color: red;
+}
+
+td.orange a:hover { 
+    color: blue;
+}
+
+td.leftAlign {
+    text-align: left;
+}
+
+td.rightAlign {
+    text-align: right;
+}
+
+/*----------------------------------------------------------------------------------
+CSS for <a>
+----------------------------------------------------------------------------------*/
+a.tabSort {
+    color: black;
+}
+
+a.tabSort:hover {
+    color: blue;
+}
+
+a { 
+    color:rgb(63, 126, 243); text-decoration:none;
+}
+a:hover { 
+    color:blue; 
+    cursor: pointer;
+}

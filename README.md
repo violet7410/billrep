@@ -1,29 +1,40 @@
-# README #
+# Python CGI Web Report #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+For billing team internal use only. 
 
-### What is this repository for? ###
+## Installation ##
+### 1. Environment Setup ###
+* Http Server setup
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+```dnf install httpd```
 
-### How do I get set up? ###
+### 2. httpd setup ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+1. Add directory to /etc/httpd/conf.d
 
-### Contribution guidelines ###
+```vi /etc/httpd/conf.d/billrep.conf```
 
-* Writing tests
-* Code review
-* Other guidelines
+then add following settings 
 
-### Who do I talk to? ###
+```
+# Bill Reports CGI
 
-* Repo owner or admin
-* Other community or team contact
+Alias       /billrep/css "/svw/svbranch/imp/attool/billrep/css"
+Alias       /billrep/js  "/svw/svbranch/imp/attool/billrep/js"
+ScriptAlias /billrep     "/svw/svbranch/imp/attool/billrep"
+<Directory "/svw/svbranch/imp/attool/billrep/">
+    Options +ExecCGI
+    AllowOverride None
+    Require all granted
+</Directory>
+
+SetEnv BILL_REP_HOME /svw/svbranch/imp/attool/billrep
+SetEnv PYTHONPATH    /svw/svbranch/imp/attool/billrep/lib
+```
+
+2. Restart httpd
+
+```
+systemctl restart httpd
+```
+

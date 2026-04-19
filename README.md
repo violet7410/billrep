@@ -12,7 +12,7 @@ dnf install httpd
 
 ### 2. httpd setup ###
 
-1. Add directory to /etc/httpd/conf.d
+1. Add web report configuration for httpd to /etc/httpd/conf.d
 
 ```
 vi /etc/httpd/conf.d/billrep.conf

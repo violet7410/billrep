@@ -6,13 +6,17 @@ For billing team internal use only.
 ### 1. Environment Setup ###
 * Http Server setup
 
-```dnf install httpd```
+```
+dnf install httpd
+```
 
 ### 2. httpd setup ###
 
 1. Add directory to /etc/httpd/conf.d
 
-```vi /etc/httpd/conf.d/billrep.conf```
+```
+vi /etc/httpd/conf.d/billrep.conf
+```
 
 then add following settings 
 
